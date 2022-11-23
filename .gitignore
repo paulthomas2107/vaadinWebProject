@@ -32,3 +32,4 @@ build/
 
 ### VS Code ###
 .vscode/
+/mariadb-java-client-3.0.5-sources.jar

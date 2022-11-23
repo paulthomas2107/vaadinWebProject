@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.vaadin.crudui.crud.CrudListener;
 
 import java.util.Collection;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -13,7 +14,7 @@ public class BookService implements CrudListener<Book> {
     private final BookRepository repository;
 
     @Override
-    public Collection<Book> findAll() {
+    public List<Book> findAll() {
         return repository.findAll();
     }
 

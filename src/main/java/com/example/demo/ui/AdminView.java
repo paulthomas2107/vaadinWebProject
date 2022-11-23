@@ -5,6 +5,7 @@ import com.example.demo.backend.BookService;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 import org.vaadin.crudui.crud.impl.GridCrud;
 
 import javax.annotation.security.RolesAllowed;
@@ -16,6 +17,8 @@ public class AdminView extends VerticalLayout {
         var crud = new GridCrud<>(Book.class, service);
         crud.getGrid().setColumns("title", "publishedDate", "rating");
         crud.getCrudFormFactory().setVisibleProperties("title", "publishedDate", "rating");
+        crud.setAddOperationVisible(false);
+        crud.getCrudLayout().addToolbarComponent(new RouterLink("New Book", NewView.class));
 
         add(
                 new H1("Admin View"),
